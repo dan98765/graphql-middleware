@@ -1,0 +1,35 @@
+repos:
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v1.3.0
+    hooks:
+    -   id: autopep8-wrapper
+        args:
+        - -i
+        - --ignore=E309,E501
+        exclude: ^docs/.*$
+    -   id: check-json
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: end-of-file-fixer
+    -   id: fix-encoding-pragma
+        exclude: ^docs/.*$
+    -   id: flake8
+        exclude: ^docs/.*$
+    -   id: name-tests-test
+    -   id: trailing-whitespace
+    -   id: requirements-txt-fixer
+        files: requirements-dev.txt
+    -   id: pretty-format-json
+        args:
+        - --autofix
+        - --indent=4
+-   repo: git://github.com/asottile/reorder_python_imports
+    rev: v1.0.1
+    hooks:
+    -   id: reorder-python-imports
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v1.3.1
+    hooks:
+    -   id: pyupgrade
+        args:
+        - --py36-plus
